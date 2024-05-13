@@ -5,25 +5,19 @@ import Rules from './components/Rules'
 import Score from './components/Score'
 
 function App() {
- 
+
   const [score, setScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
 
-  // const handleScoreChange = (newScore, newComputerScore) => {
-  //   setScore(newScore);
-  //   setComputerScore(newComputerScore);
-  // };
-  
   return (
-   <div className='bg-sky-950 w-screen h-screen'>
-    <Header text='rock paper scissors lizard spock'/>
-    <Score  score={score} computerScore={computerScore} />
-    <Game
-      //handleScoreChange={handleScoreChange} 
-      score ={score} setScore={setScore} computerScore = {computerScore} setComputerScore = {setComputerScore}
-     />
-    <Rules/>
-   </div>
+    <div className='bg-sky-950 w-screen h-screen'>
+      <Header text='rock paper scissors lizard spock' />
+      <Score score={score} computerScore={computerScore} />
+      <Game
+        score={score} setScore={setScore} computerScore={computerScore} setComputerScore={setComputerScore}
+      />
+      <Rules />
+    </div>
   )
 }
 
