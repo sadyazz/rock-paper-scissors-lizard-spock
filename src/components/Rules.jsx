@@ -32,7 +32,7 @@ const Rules = () => {
             </div>
 
             <img 
-              src="src/assets/rules.svg" 
+              src="./assets/rules.svg" 
               alt="Game rules diagram"
               className="w-full max-w-[300px] mx-auto"
             />

@@ -4,7 +4,7 @@ const moves = [
       icon: (
         <div className="bg-white hover:bg-slate-300 rounded-full h-28 w-28 flex items-center justify-center p-4 m-5 hover:cursor-pointer">
           {" "}
-          <img src="src\assets\rock.svg"></img>
+            <img src="./assets/rock.svg"></img>
         </div>
       ),
     },
@@ -13,7 +13,7 @@ const moves = [
       icon: (
         <div className="bg-white hover:bg-slate-300 rounded-full h-28 w-28 flex items-center justify-center p-4 m-5 hover:cursor-pointer">
           {" "}
-          <img src="src\assets\paper.svg"></img>
+          <img src="./assets/paper.svg"></img>
         </div>
       ),
     },
@@ -22,7 +22,7 @@ const moves = [
       icon: (
         <div className="bg-white hover:bg-slate-300 rounded-full h-28 w-28 flex items-center justify-center p-4 m-5 hover:cursor-pointer">
           {" "}
-          <img src="src\assets\scissors.svg"></img>
+          <img src="./assets/scissors.svg"></img>
         </div>
       ),
     },
@@ -31,7 +31,7 @@ const moves = [
       icon: (
         <div className="bg-white hover:bg-slate-300 rounded-full h-28 w-28 flex items-center justify-center p-4 m-5 hover:cursor-pointer">
           {" "}
-          <img src="src\assets\lizard.svg"></img>
+          <img src="./assets/lizard.svg"></img>
         </div>
       ),
     },
@@ -40,7 +40,7 @@ const moves = [
       icon: (
         <div className="bg-white hover:bg-slate-300 rounded-full h-28 w-28 flex items-center justify-center p-4 m-5 hover:cursor-pointer">
           {" "}
-          <img src="src\assets\spock.svg"></img>
+          <img src="./assets/spock.svg"></img>
         </div>
       ),
     },
