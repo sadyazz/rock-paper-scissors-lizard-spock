@@ -8,15 +8,21 @@ function App() {
 
   const [score, setScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
+  const [currentResult, setCurrentResult] = useState("");
 
   return (
-    <div className='bg-sky-950 w-screen h-screen'>
+    <div className='bg-sky-950 px-2 w-screen h-screen relative'>
       <Header text='rock paper scissors lizard spock' />
-      <Score score={score} computerScore={computerScore} />
-      <Game
-        score={score} setScore={setScore} computerScore={computerScore} setComputerScore={setComputerScore}
-      />
-      <Rules />
+      <div className="mt-16 md:mt-32">
+        <Score score={score} computerScore={computerScore} currentResult={currentResult} />
+        <Game
+          score={score} setScore={setScore} computerScore={computerScore} setComputerScore={setComputerScore}
+          setCurrentResult={setCurrentResult}
+        />
+      </div>
+      <div className="absolute bottom-8 right-8">
+        <Rules />
+      </div>
     </div>
   )
 }

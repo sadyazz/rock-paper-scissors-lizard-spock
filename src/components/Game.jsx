@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from 'react'
 import { moves } from "../constants/moves";
 
-const Game = ({ score, setScore, computerScore, setComputerScore }) => {
+const Game = ({ score, setScore, computerScore, setComputerScore, setCurrentResult }) => {
 
   const [selected, setSelected] = useState(null);
   const [computerChoice, setComputerChoice] = useState(null);
@@ -15,12 +15,15 @@ const Game = ({ score, setScore, computerScore, setComputerScore }) => {
     if (!!selected && !!computerChoice) {
       if (selected === computerChoice) {
         setResultMessage("Tied");
+        setCurrentResult("Tied");
       } else if (comboMoves === 'paperrock' || comboMoves === 'rocklizard' || comboMoves === 'lizardspock' || comboMoves === 'spockscissors' || comboMoves === 'scissorspaper' || comboMoves === 'rockscissors' || comboMoves === 'scissorslizard' || comboMoves === 'lizardpaper' || comboMoves === 'paperspock' || comboMoves === 'spockrock') {
         setScore(score + 1);
         setResultMessage("You won");
+        setCurrentResult("You won");
       } else {
         setComputerScore(computerScore + 1);
         setResultMessage("You lost");
+        setCurrentResult("You lost");
       }
     }
   }, [selected, computerChoice]);
@@ -34,7 +37,7 @@ const Game = ({ score, setScore, computerScore, setComputerScore }) => {
   };
 
   return (
-    <div className=" text-gray m-0 text-4xl w-screen flex justify-center flex-wrap py-7">
+    <div className=" text-gray m-0 text-4xl w-full flex justify-center flex-wrap py-7">
 
       <p className="w-screen flex justify-center text-white font-medium">{resultMessage}</p>
 

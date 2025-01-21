@@ -1,25 +1,35 @@
 import React from "react";
 import { useState, useEffect } from 'react'
 
-const Score = ({ score, computerScore }) => {
-
-  const [isDifferent, setIsDifferent] = useState(false);
+const Score = ({ score, computerScore, currentResult }) => {
+  const [borderColor, setBorderColor] = useState("border-white");
 
   useEffect(() => {
-    if (score > computerScore) {
-      setIsDifferent("border-green-400");
-    } else if (score < computerScore) {
-      setIsDifferent("border-red-400");
+    if (currentResult === "You won") {
+      setBorderColor("border-green-500");
+    } else if (currentResult === "You lost") {
+      setBorderColor("border-red-500");
     } else {
-      setIsDifferent("");
+      setBorderColor("border-white");
     }
-  }, [score, computerScore]);
-
-  const borderClass = isDifferent;
+  }, [currentResult]);
 
   return (
-    <div className={`flex justify-evenly rounded-xl border-slate-400 border-2 text-gray my-5 text-4xl  py-5 w-1/4 h-min m-auto  ${borderClass}`}>
-      <p className="text-slate-200">{score} : {computerScore}</p>
+    <div className={`w-64 mx-auto my-8 ${borderColor} border-2 rounded-xl bg-sky-900/20 backdrop-blur-sm shadow-lg`}>
+      <h2 className="text-slate-200 text-center text-lg font-medium pt-3 border-b border-slate-700/50 pb-2">
+        SCORE
+      </h2>
+      <div className="flex justify-center items-center gap-8 p-4">
+        <div className="text-center">
+          <p className="text-sm text-slate-400 mb-1">YOU</p>
+          <p className="text-4xl font-bold text-slate-200">{score}</p>
+        </div>
+        <div className="text-slate-400 text-3xl font-light">vs</div>
+        <div className="text-center">
+          <p className="text-sm text-slate-400 mb-1">COMPUTER</p>
+          <p className="text-4xl font-bold text-slate-200">{computerScore}</p>
+        </div>
+      </div>
     </div>
   )
 }
