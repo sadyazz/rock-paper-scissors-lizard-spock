@@ -1,18 +1,18 @@
 import React from "react";
 import { useState, useEffect } from 'react'
 
-const Score = ({ score, computerScore, currentResult }) => {
+const Score = ({ score, computerScore, resultMessage }) => {
   const [borderColor, setBorderColor] = useState("border-white");
 
   useEffect(() => {
-    if (currentResult === "You won") {
+    if (resultMessage === "You won") {
       setBorderColor("border-green-500");
-    } else if (currentResult === "You lost") {
+    } else if (resultMessage === "You lost") {
       setBorderColor("border-red-500");
     } else {
       setBorderColor("border-white");
     }
-  }, [currentResult]);
+  }, [resultMessage]);
 
   return (
     <div className={`w-64 mx-auto my-8 ${borderColor} border-2 rounded-xl bg-sky-900/20 backdrop-blur-sm shadow-lg`}>
